@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="Top" prefHeight="700.0" prefWidth="930.0" style="-fx-background-color: #207398;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <JFXSlider fx:id="slider1" blockIncrement="0.1" layoutX="274.0" layoutY="61.0" majorTickUnit="0.2" max="1.0" minorTickCount="2" pickOnBounds="false" prefHeight="58.0" prefWidth="176.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-background-color: #758283;">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </JFXSlider>
+      <JFXSlider fx:id="slider2" blockIncrement="50.0" layoutX="46.0" layoutY="64.0" majorTickUnit="100.0" max="400.0" prefHeight="58.0" prefWidth="176.0" showTickLabels="true" showTickMarks="true" style="-fx-background-color: #758283;" AnchorPane.topAnchor="64.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </JFXSlider>
+      <JFXButton fx:id="btn" layoutX="499.0" layoutY="67.0" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #CAD5E2;" text="Start" textAlignment="CENTER" />
+      <Circle fx:id="sphere" fill="DODGERBLUE" layoutX="84.0" layoutY="225.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+      <Separator layoutX="299.0" layoutY="699.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <JFXButton fx:id="resetBtn" layoutX="596.0" layoutY="68.0" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #CAD5E2;" text="Reset" />
+   </children>
+</AnchorPane>
