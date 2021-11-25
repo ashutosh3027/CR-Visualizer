@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -37,11 +38,6 @@
             <Font name="Times New Roman Bold" size="17.0" />
          </font>
       </JFXTextArea>
-      <JFXTextArea editable="false" layoutX="11.0" prefHeight="58.0" prefWidth="438.0" text="Coefficient Of Restitution Visualizer" unFocusColor="WHITE">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </JFXTextArea>
       <JFXTextArea fx:id="showHeight" editable="false" focusColor="WHITE" layoutX="144.0" layoutY="319.0" prefHeight="298.0" prefWidth="95.0" unFocusColor="WHITE" AnchorPane.topAnchor="319.0">
          <font>
             <Font name="Times New Roman" size="17.0" />
@@ -55,5 +51,10 @@
             <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
          </padding>
       </JFXTextArea>
+      <Label layoutX="7.0" prefHeight="62.0" prefWidth="446.0" text="Coefficient Of Restitution Visualizer" textFill="#4059a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
