@@ -104,6 +104,7 @@ public class SampleController implements Initializable {
 						if (resetAll == true || printCount == 10) {
                             
 							setToInitial(ball);
+							speedY = 5;
 							timeline.stop();
 						}
 						ball.setY(ball.getY() + speedY);
