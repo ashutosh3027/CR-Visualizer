@@ -16,6 +16,7 @@ public class Main extends Application {
 		stage.setScene(scene);  
 		stage.setResizable(false);
 		stage.show();
+		stage.setTitle("Coefficient Of Restitution Visualizer");
     }
     
     public static void main(String[] args) {

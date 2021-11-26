@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
@@ -38,6 +39,11 @@ public class SampleController implements Initializable {
 	private JFXTextArea heightLabel; // textArea to show height label
 	@FXML
 	private JFXTextArea scale;
+	@FXML
+	private Label eChange;
+
+	@FXML
+	private Label heightChange;
 
 	private double height = 400, topBorder = 250; // height is a height of ball from bottom topBorder is a height of
 													// upper bound from top.
@@ -71,6 +77,8 @@ public class SampleController implements Initializable {
 				topBorder = 600 - height;
 				ball.setY(topBorder);
 				ball.ballPosition(sphere);
+				double temp = (double) Math.round(height * 100) / 100;
+				heightChange.setText(Double. toString(temp));
 			}
 		});
 		// to detect changes in value of CoefficientoRestitution;
@@ -79,6 +87,8 @@ public class SampleController implements Initializable {
 				ce = (double) newValue;
 				scale.setText("Slider-1:\nHeight:0 to 400\nSlider-2:\nCoefficient of Restitution: 0 to 1\ne = "
 						+ (double) Math.round(ce * 100) / 100);
+				double temp = (double) Math.round(ce * 100) / 100;
+				eChange.setText(Double. toString(temp));
 			}
 		});
 		// To start the bouncing of ball;
@@ -98,11 +108,11 @@ public class SampleController implements Initializable {
 				Timeline timeline = new Timeline();
 				KeyFrame kf = new KeyFrame(Duration.seconds(0), new EventHandler<ActionEvent>() {
 					int speedY = 5;
-                       
+
 					@Override
 					public void handle(ActionEvent actionEvent) {
 						if (resetAll == true || printCount == 10) {
-                            
+
 							setToInitial(ball);
 							speedY = 5;
 							timeline.stop();
@@ -139,6 +149,7 @@ public class SampleController implements Initializable {
 		// Rest button function;
 		EventHandler<ActionEvent> reset = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent r) {
+				setToInitial(ball);
 				printHeight = "";
 				textHeightLabel = "";
 				heightLabel.setText(String.valueOf(textHeightLabel));
@@ -150,17 +161,18 @@ public class SampleController implements Initializable {
 		resetBtn.setOnAction(reset); // reset button action;
 
 	}
-    public void setToInitial(Ball ball) {
-    	this.slider1.setDisable(false);
+
+	public void setToInitial(Ball ball) {
+		this.slider1.setDisable(false);
 		this.slider2.setDisable(false);
 		this.slider2.setValue(400);
 		this.slider1.setValue(1);
 		this.ce = 1;
-	    this.height = 400;
+		this.height = 400;
 		this.topBorder = 600 - this.height;
 		ball.setY(topBorder);
 		ball.ballPosition(sphere);
 		printCount = 1;
 		label = 1;
-    }
+	}
 }
